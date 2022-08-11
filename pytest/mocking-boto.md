@@ -4,7 +4,7 @@ For [s3-ocr issue #21](https://github.com/simonw/s3-ocr/issues/21) I needed to w
 
 > `botocore.errorfactory.LimitExceededException: An error occurred (LimitExceededException) when calling the StartDocumentTextDetection operation: Open jobs exceed maximum concurrent job limit`
 
-I uses [moto](https://github.com/spulec/moto) to simulate AWS in that test suite, but moto does not yet have a mechanism for simulating Textract errors like this one.
+I use [moto](https://github.com/spulec/moto) to simulate AWS in that test suite, but moto does not yet have a mechanism for simulating Textract errors like this one.
 
 I ended up turning to Python mocks, here provided by the the [pytest-mock](https://pypi.org/project/pytest-mock/) fixture. Here's the test I came up with:
 
